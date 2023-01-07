@@ -1,10 +1,16 @@
+let GITHUB_PRIVATE_KEY = process.env.GITHUB_PRIVATE_KEY
+
+if (GITHUB_PRIVATE_KEY) {
+  GITHUB_PRIVATE_KEY = Buffer.from(process.env.GITHUB_PRIVATE_KEY, 'base64').toString('utf8')
+}
+
 export const env = {
   app_id: process.env.GITHUB_APP_ID,
   client_id: process.env.GITHUB_CLIENT_ID,
   client_secret: process.env.GITHUB_CLIENT_SECRET,
   installation_id: process.env.GITHUB_INSTALLATION_ID,
   token: process.env.GITHUB_TOKEN,
-  private_key: JSON.parse(process.env.GITHUB_PRIVATE_KEY),
+  private_key: GITHUB_PRIVATE_KEY,
   encryption_password: process.env.ENCRYPTION_PASSWORD,
   app_host: process.env.NEXT_PUBLIC_GISCUS_APP_HOST as `https://${string}`,
   revalidate_first_page: process.env.NEXT_PUBLIC_REVALIDATE_FIRST_PAGE !== 'false',
