@@ -29,6 +29,10 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: `frame-ancestors 'self';`,
   },
+  {
+   key: 'Access-Control-Allow-Origin', 
+   value: JSON.parse(process.env.ORIGINS)[0]
+  }
 ];
 
 const swr = 60 * 60 * 24 * 7; // 7 days
