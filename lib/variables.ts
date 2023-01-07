@@ -1,7 +1,7 @@
-let GITHUB_PRIVATE_KEY = process.env.GITHUB_PRIVATE_KEY
+let GITHUB_PRIVATE_KEY = process.env.GITHUB_PRIVATE_KEY;
 
 if (GITHUB_PRIVATE_KEY) {
-  GITHUB_PRIVATE_KEY = Buffer.from(process.env.GITHUB_PRIVATE_KEY, 'base64').toString('utf8')
+  GITHUB_PRIVATE_KEY = Buffer.from(process.env.GITHUB_PRIVATE_KEY, 'base64').toString('utf8');
 }
 
 export const env = {
