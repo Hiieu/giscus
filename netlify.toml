@@ -1,3 +1,4 @@
+# Modify response headers by the netlify server
 [[headers]]
   for = "/*"
   [headers.values]
